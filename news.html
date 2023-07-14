@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <style>
-
-.text-box h2{
-            width: 100%;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .text-box {
-            color: white;
-            display: flex;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            position: relative;
+            margin: auto;
+        }
+
+        .container {
+            margin: auto;
+            max-width: 1920px;
+            padding: 0px 20px;
+        }
+
+        /* Add a black background color to the top navigation */
+        .topnav {
             background-color: #1D1D1D;
-            margin-top: 50px;
-            padding-top: 10px;
-            border-radius: 10px;
+            overflow: hidden;
+            border-radius: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: right;
+            background-image: url("./fromsoftware.png");
             outline-color: white;
-            outline-width: 0.1px;
-            outline: auto;
-            box-shadow: 0 2px 10px 2px black;
-            padding: 10px 20px;
-            text-align: left;
+            outline-style: solid;
+            outline-width: 0.5px;
+            transition: box-shadow 0.3s;
+            box-shadow: 0 0 0 0 black;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            
         }
 
+        .topnav:hover {
+            box-shadow: 0 2px 10px 2px black;
+        }
+
+        .buttons:hover {
+            box-shadow: 0 2px 10px 2px black;
+        }
 
         .title-box {
             color: white;
@@ -38,73 +63,97 @@
             text-align: center;
         }
 
-        body{
-            background-color: black;
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
         }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #696969;
+            color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav a.active {
+            background-color: #505050;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .text-box {
+            color: white;
+            display: flex;
+            background-color: #1D1D1D;
+            margin-top: 50px;
+            padding-top: 10px;
+            border-radius: 10px;
+            outline-color: white;
+            outline-width: 0.1px;
+            outline: auto;
+            box-shadow: 0 2px 10px 2px black;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
         /* Add a black background color to the top navigation */
-        .topnav {
+        .buttons {
             background-color: #1D1D1D;
             overflow: hidden;
-            border-radius: 100px;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
             display: flex;
-            justify-content: right;
+            justify-content: center;
             background-image: url("./fromsoftware.png");
             outline-color: white;
             outline-style: solid;
             outline-width: 0.5px;
             transition: box-shadow 0.3s;
-            box-shadow: 0px 0px 0px 0px black;
+            box-shadow: 0 0 0 0 black;
             
-        }
-
-        .topnav:hover {
-            box-shadow: 0px 2px 10px 2px black;
+            border-radius: 10px;
+            position: fixed;
+            left: 1px;
+            right: 1px;
+            bottom: 5px;
+            
 
         }
 
         /* Style the links inside the navigation bar */
-            .topnav a {
-                float: left;
-                color: white;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 25px;
-                font-family: Arial, Helvetica, sans-serif;
-            }
+        .buttons a {
+            float: left;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
         /* Change the color of links on hover */
-                .topnav a:hover {
-                    background-color: #696969;
-                    color: whitesmoke;
-                    font-family: Arial, Helvetica, sans-serif;
-                }
+        .buttons a:hover {
+            background-color: #696969;
+            color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
         /* Add a color to the active/current link */
-                .topnav a.active {
-                    background-color: #505050;
-                    color: white;
-                    font-family: Arial, Helvetica, sans-serif;
-                }
-
-                .background {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-image: url("./games.png");
-            z-index: -1;
-            opacity: 0.3;
-            
-        }
-
-        body {
+        .buttons a.active {
+            background-color: #505050;
+            color: white;
             font-family: Arial, Helvetica, sans-serif;
-            
-            
         }
+
+        .text-box h2 {
+            width: 100%;
+        }
+
         .text-box-subtitle {
             color: white;
             display: flex;
@@ -117,8 +166,8 @@
             padding: 10px 20px;
             text-align: center;
             font-size: 24px;
-            margin-top: 10px;
         }
+
         .souls-gif {
             display: flex;
             justify-content: center;
@@ -137,46 +186,111 @@
             margin-bottom: auto;
             max-width: 1000px;
             
-            
         }
-        
-        
-        
 
+        .background {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: url("./games.png");
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+
+        .game-box {
+            display: flex;
+            padding: 40px;
+        }
+
+        .game-box:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .game-box-text {
+            width: 40%;
+        }
+
+        @media only screen and (max-width: 1200px) {
+
+            .game-box {
+                flex-direction: column;
+            }
+
+            .game-box:nth-child(even) {
+            flex-direction: column;
+        }
+
+            .game-box-text {
+                width: 100%;
+            }
+
+            .souls-gif {
+                width: 100%;
+            }
+
+        }
     </style>
-
-
-        
-        
-
-    
 </head>
+
 <body>
     <div class="background"></div>
-    <div class="topnav">
-        <a href="/index">Home</a>
-        <a href="/gamesinfo">Games</a>
-        <a class="active" href="/news">News</a>
-        <a href="#about">Contact</a>
-    </div>
+    <div class="container">
+        <div class="topnav">
+            <a href="/index">Home</a>
+            <a href="/gamesinfo">Games</a>
+            <a class="active" href="/news">News</a>
+            <a href="#about">Contact</a>
+        </div>
+
+
     <div class="title-box">
         <h1>SOULS NEWS</h1>
     </div>
+  
 
-    <div class="text-box-subtitle">
-        <p>FromSoftware's next release is Armoured Core VI: Fires of Rubicon. While this mech game will reportedly take some lessons learned from the Soulsborne franchise, we're not getting one of the RPGs that made FromSoftware a household gaming name for some time. This gives us a question then of what the famed developer should do next.
+    <div class="game-box">
+        <div class="game-box-text">
+            <div id="demon-souls" class="text-box">
+                <h2>AMOURED CORE VI: FIRES OF RUBICON</h2>
+            </div>
 
-            The first answer to that question seems pretty clear. FromSoftware should almost definitely will capitalise on the immense success of Elden Ring with DLC. Considering all of the Soulsborne games besides Sekiro: Shadows Die Twice have had additional content, it's more a matter of when we're getting Elden Ring DLC rather than if.
-            Out of the games that could get sequels, though, there are two clear candidates. Dark Souls has been wrapped up as a trilogy, so it seems highly unlikely we'd be getting another game in that franchise. Elden Ring is also too recent, and while it is the most successful title FromSoftware has released, it is so massive that work on a sequel will take years before we see anything on it. So then, we're left with two options: Bloodborne and Sekiro: Shadows Die Twice.
+            <div class="text-box-subtitle">
+                <p>Based on the knowledge gained during joint development of their recent titles, Bandai Namco Entertainment and FromSoftware seek to deliver a new action game.
 
-            Before the dumpster fire starts, I am aware Sekiro: Shadows Die Twice is not technically acknowledged as a Soulsborne game, but from one glance at the game it's clear to see it exists in a very similar vein to the RPGs FromSoftware has made before, just with more action focused gameplay and a rhythm game as its core mechanic. After we've just seen the sprawling, open RPG that Elden Ring is, perhaps it would be best to focus on a game with a tighter focus like a sequel to Sekiro.</p>
+ 
+
+                    ARMORED CORE VI FIRES OF RUBICON combines FromSoftware’s longstanding expertise in mech games with their signature action gameplay to bring a brand-new, high octane experience to the series.
+                    
+                     
+                    
+                    In ARMORED CORE VI FIRES OF RUBICON, players will assemble their mech from a wide variety of parts and weaponry to soar freely through mission locales that redefine three-dimensional mobility. Face down overwhelming opposition by outgunning and overrunning your enemies with dynamic movement that makes full use of ranged and melee combat. Players can experience frenetic and fast-paced action that can only be truly achieved with mechs.</p>
+            </div>
+        </div>
+        <div class="souls-gif">
+            <img src="./AC.gif" alt="Demon souls">
+        </div>
     </div>
+    <div class="game-box">
+        <div class="game-box-text">
+            <div id="dark-souls" class="text-box">
+                <h2>ELDEN RING DLC</h2>
+            </div>
 
-    <div class="souls-gif">
-        <img src="./AC.gif" alt="Demon souls">
-        <img src="./elden-ring-malenia.gif" a;t="milenia">
+            <div class="text-box-subtitle">
+                <p>While news regarding Elden Ring's upcoming DLC, Shadow of the Erdtree, has been nonexistent past the initial reveal teaser, there are still a few big events left in 2023 where the DLC could make its first large-scale showing. First announced in February 2023, Shadow of the Erdtree was revealed with nothing more than a mysterious teaser image that gave relatively few hints towards what the DLC might be about. However, no new information about the DLC has been revealed since, and developer FromSoftware has yet to show any real trailers.
+
+                    With Shadow of the Erdtree in development, Elden Ring follows in the footsteps of many of FromSoftware's past games, such as Dark Souls and Bloodborne, many of which have received significant DLC expansions that build on the mysteries and lore of their respective games - and in most cases, are considered among the best of the developer's creations. The quality of FromSoftware's past work, as well as the extreme success of Elden Ring itself, mean that Shadow of the Erdtree has very high standards to live up to upon its eventual release. But while this likely means a long development time, mirroring that of base Elden Ring, there are still a few opportunities for the DLC to show itself off in 2023. </p>
+            </div>
+        </div>
+        <div class="souls-gif">
+            <img src="./elden-ring-malenia.gif" alt="dark souls">
+        </div>
     </div>
+    
 
 </body>
-</html>
 
+</html>
